@@ -48,6 +48,7 @@ public class ListaPersonas {
             scanner.nextLine();
 
             persona nuevaPersona = new persona(nombre, apellido, genero, edad);
+            listaDatos.add(nuevaPersona);
         }
         scanner.close();
         return listaDatos;
