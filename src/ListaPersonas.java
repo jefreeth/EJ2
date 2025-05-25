@@ -15,15 +15,17 @@ public class ListaPersonas {
             this.genero = genero;
             this.edad = edad;
         }
+
         @Override
-        public String toString(){
+        public String toString() {
             return "nombre: " + nombre + "/" +
                     " apellido: " + apellido + "/" +
                     " genero: " + genero + "/" +
                     " edad: " + edad;
         }
     }
-    public static ArrayList<persona> listaDePersonas () {
+
+    public static ArrayList<persona> listaDePersonas() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<persona> listaDatos = new ArrayList<>();
         int contadorPersonas = 0;
@@ -50,29 +52,48 @@ public class ListaPersonas {
         scanner.close();
         return listaDatos;
     }
-    public static void MonstrarGeneroNombre(ArrayList<persona> listaDatos) {
+
+    public static void MostrarGeneroNombre(ArrayList<persona> listaDatos) {
         System.out.println("nombre y genero de las personas: ");
-        for (persona persona : listaDatos){
+        for (persona persona : listaDatos) {
             System.out.println("nombre: " + persona.nombre + ", genero: " + persona.genero);
         }
     }
 
-    public static double CalcularProedio(ArrayList<persona> listaDatos){
+    public static double CalcularProedio(ArrayList<persona> listaDatos) {
         int suma = 0;
-        for (persona persona : listaDatos){
-        suma += persona.edad;
-    }
-    return (double) suma / personas.size()
-    }
-
-    public static int ContarGenero (ArrayList<personas> listaDatos, String GeneroBuscado){
-        int contador = 0;
-        for (persona perosna : listaDatos){
-            if (persona.genero.equalsIgnoreCase(GeneroBuscado){
-                contador++
-            }
-            return contador;
+        for (persona persona : listaDatos) {
+            suma += persona.edad;
         }
+        return (double) suma / listaDatos.size();
     }
 
+    public static int ContarGenero(ArrayList<persona> listaDatos, String GeneroBuscado) {
+        int contador = 0;
+        for (persona perosna : listaDatos) {
+            if (GeneroBuscado.equalsIgnoreCase(GeneroBuscado)) {
+                contador++;
+            }
+
+        }
+        return contador++;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<persona> listaDatos = listaDePersonas();
+
+        System.out.println(" Datos completos ");
+        for (persona persona : listaDatos) {
+            System.out.println(persona.toString());
+        }
+        MostrarGeneroNombre(listaDatos);
+
+        System.out.println(" promedio de edad: " + CalcularProedio(listaDatos));
+        int contadorMasculino = ContarGenero(listaDatos, "masculino");
+        int contadorFemenino = ContarGenero(listaDatos, "femenino");
+
+        System.out.println(" cantidad de personas masculinas: " + contadorMasculino);
+        System.out.println(" cantidad de personas femeninas: " + contadorFemenino);
+
+    }
 }
