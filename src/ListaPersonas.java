@@ -59,8 +59,20 @@ public class ListaPersonas {
 
     public static double CalcularProedio(ArrayList<persona> listaDatos){
         int suma = 0;
-        for (persona persona : listaDatos);
+        for (persona persona : listaDatos){
         suma += persona.edad;
     }
     return (double) suma / personas.size()
+    }
+
+    public static int ContarGenero (ArrayList<personas> listaDatos, String GeneroBuscado){
+        int contador = 0;
+        for (persona perosna : listaDatos){
+            if (persona.genero.equalsIgnoreCase(GeneroBuscado){
+                contador++
+            }
+            return contador;
+        }
+    }
+
 }
