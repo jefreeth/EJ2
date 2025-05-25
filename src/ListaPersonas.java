@@ -28,7 +28,6 @@ public class ListaPersonas {
         ArrayList<persona> listaDatos = new ArrayList<>();
         int contadorPersonas = 0;
         int numeroPersonas = 5;
-        int sumaEdades = 0;
 
         while (contadorPersonas < numeroPersonas) {
             System.out.println("ingrese los datos de la persona #" + (contadorPersonas + 1) + ":");
@@ -45,12 +44,23 @@ public class ListaPersonas {
             System.out.println("ingrese la edad:");
             int edad = scanner.nextInt();
             scanner.nextLine();
-            sumaEdades += edad;
 
             persona nuevaPersona = new persona(nombre, apellido, genero, edad);
         }
         scanner.close();
         return listaDatos;
     }
+    public static void MonstrarGeneroNombre(ArrayList<persona> listaDatos) {
+        System.out.println("nombre y genero de las personas: ");
+        for (persona persona : listaDatos){
+            System.out.println("nombre: " + persona.nombre + ", genero: " + persona.genero);
+        }
+    }
 
+    public static double CalcularProedio(ArrayList<persona> listaDatos){
+        int suma = 0;
+        for (persona persona : listaDatos);
+        suma += persona.edad;
+    }
+    return (double) suma / personas.size()
 }
