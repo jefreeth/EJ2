@@ -16,6 +16,22 @@ public class ListaPersonas {
             this.edad = edad;
         }
 
+        public String getNombre(){
+            return nombre;
+        }
+
+        public String getApellido(){
+            return apellido;
+        }
+
+        public String getGenero(){
+            return genero;
+        }
+
+        public int gerEdad(){
+            return edad;
+        }
+
         @Override
         public String toString() {
             return "nombre: " + nombre + "/" +
@@ -49,6 +65,7 @@ public class ListaPersonas {
 
             persona nuevaPersona = new persona(nombre, apellido, genero, edad);
             listaDatos.add(nuevaPersona);
+            contadorPersonas++;
         }
         scanner.close();
         return listaDatos;
@@ -61,7 +78,7 @@ public class ListaPersonas {
         }
     }
 
-    public static double CalcularProedio(ArrayList<persona> listaDatos) {
+    public static double CalcularPromedio(ArrayList<persona> listaDatos) {
         int suma = 0;
         for (persona persona : listaDatos) {
             suma += persona.edad;
@@ -77,7 +94,7 @@ public class ListaPersonas {
             }
 
         }
-        return contador++;
+        return contador;
     }
 
     public static void main(String[] args) {
@@ -89,7 +106,7 @@ public class ListaPersonas {
         }
         MostrarGeneroNombre(listaDatos);
 
-        System.out.println(" promedio de edad: " + CalcularProedio(listaDatos));
+        System.out.println(" promedio de edad: " + CalcularPromedio(listaDatos));
         int contadorMasculino = ContarGenero(listaDatos, "masculino");
         int contadorFemenino = ContarGenero(listaDatos, "femenino");
 
